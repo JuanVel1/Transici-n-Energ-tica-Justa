@@ -1,19 +1,14 @@
 import './App.css'
-import Button from 'react-bootstrap/Button';
+import Description from './Description';
 import 'bootstrap/dist/css/bootstrap.min.css';
-
-
+import Footer from './Footer';
 
 function App() {
 
   return (
     <>
-        <Button as="a" variant="primary">
-          Button as link
-        </Button>
-        <Button as="a" variant="success">
-          Button as link
-        </Button>
+      <Description />
+      <Footer />
     </>
   )
 }
