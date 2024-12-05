@@ -1,10 +1,17 @@
 #root {
-  max-width: 1280px;
   margin: 0 auto;
-  padding: 2rem;
+  padding-top: 5rem;
   text-align: center;
 }
 
+.content{
+  max-width: 1280px;
+}
+
+footer {
+  width: 100% !important;
+  height: 17rem;
+}
 .logo {
   height: 6em;
   padding: 1.5em;
