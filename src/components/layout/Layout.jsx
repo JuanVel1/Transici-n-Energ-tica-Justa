@@ -7,10 +7,10 @@ export default function Layout({ children }) {
   return (
     <div className="flex flex-col min-h-screen ">
       <Header2/>
-      <main className="flex-grow h-full bg-main-bg bg-cover bg-center bg-no-repeat m-0 p-0">
+      <main className="flex-grow h-full bg-cover bg-center m-0 p-0">
         {children}
       </main>
-      <Footer2/>   
+      <Footer2/>
     </div>
   );
 }

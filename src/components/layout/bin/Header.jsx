@@ -1,15 +1,11 @@
-import { Sun } from "lucide-react";
-import { Link, useLocation } from "react-router-dom";
 
 export default function Header() {
-  // Función para determinar si una ruta está activa
 
   return (
     <>
       <header className="bg-white shadow-md">
         <nav className="container mx-auto px-6 py-4 flex justify-between items-center">
           <div className="flex items-center">
-            {/* <!-- Icono o Logo --> */}
             <svg
               className="h-8 w-8 text-gray-800"
               fill="none"

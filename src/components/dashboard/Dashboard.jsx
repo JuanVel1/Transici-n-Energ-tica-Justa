@@ -1,4 +1,3 @@
-import React, { useState } from "react";
 import Papa from "papaparse";
 import ColumnFilter from "../table/ColumnFilter";
 import CountryFilter from "../table/CountryFilter";
@@ -14,6 +13,7 @@ import {
   Tooltip,
   Legend,
 } from "chart.js";
+import { useState } from "react";
 
 // Registrar los elementos de Chart.js
 ChartJS.register(
@@ -37,11 +37,11 @@ const Dashboard = () => {
 
   // Paleta de colores para los gráficos
   const COLORS = [
-    "#4CAF50", // Verde para solar
+    "#E6F7E6", // Verde para solar
     "#FF9800", // Naranja para eólica
-    "#03A9F4", // Azul para hidroelectricidad
+    "#E6F2FA", // Azul para hidroelectricidad
     "#9C27B0", // Morado para geotermia
-    "#FFC107", // Amarillo para biocombustibles
+    "#FFF9DB", // Amarillo para biocombustibles
     "#F44336", // Rojo para consumo convencional
   ];
 
