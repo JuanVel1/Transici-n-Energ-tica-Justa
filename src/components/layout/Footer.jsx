@@ -1,4 +1,4 @@
-export default function Footer2() {
+export default function Footer() {
   return (
     <>
       <footer className="bg-gradient-to-b from-sky-500 to-cyan-950 shadow-lg">

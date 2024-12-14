@@ -8,13 +8,13 @@ const LineChart = () => {
       {
         label: "Capacidad Instalada de Energía Eólica (GW)",
         data: [50, 75, 100, 125, 150, 200],
-        borderColor: "#4CAF50",
+        borderColor: "#007BFF",
         fill: false,
       },
       {
         label: "Capacidad Instalada de Energía Solar (GW)",
         data: [10, 25, 50, 75, 100, 150],
-        borderColor: "#2196F3",
+        borderColor: "#FFC107",
         fill: false,
       },
       {

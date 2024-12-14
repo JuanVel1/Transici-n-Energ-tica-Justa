@@ -4,15 +4,20 @@ import { Pie } from "react-chartjs-2";
 const PieChart = () => {
   const data = {
     labels: [
-      "Renewables",
-      "Wind",
+      "Energías Renovables",
+      "Eólica",
       "Solar",
-      "Hydro",
+      "Hidro",
     ],
     datasets: [
       {
-        data: [40, 25, 20, 15], // Reemplaza con tus datos reales
-        backgroundColor: ["#4CAF50", "#FFEB3B", "#2196F3", "#FF5722"],
+        data: [40, 25, 20, 15],
+        backgroundColor: [
+          "#003B73",   // Azul Oscuro
+          "#007BFF",   // Azul Brillante
+          "#FFC107",   // Amarillo Solar
+          "#E6F7E6"    // Verde Suave
+        ],
       },
     ],
   };
@@ -20,11 +25,24 @@ const PieChart = () => {
   const options = {
     responsive: true,
     plugins: {
-      legend: { display: true, position: "top" },
+      legend: { 
+        display: true, 
+        position: "top",
+        labels: {
+          color: "#343A40" // Gris Oscuro para texto de leyenda
+        }
+      },
     },
   };
 
-  return <Pie data={data} options={options} />;
+  return (
+    <div className="bg-blue-50 p-4 rounded-lg shadow-md">
+      <h3 className="text-lg font-semibold text-gray-800 mb-4">
+        Distribución de Energías Renovables
+      </h3>
+      <Pie data={data} options={options} />
+    </div>
+  );
 };
 
 export default PieChart;

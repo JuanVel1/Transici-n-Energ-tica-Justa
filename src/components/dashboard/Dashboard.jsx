@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import Papa from "papaparse";
 import ColumnFilter from "../table/ColumnFilter";
 import CountryFilter from "../table/CountryFilter";
@@ -15,7 +16,6 @@ import {
 } from "chart.js";
 import { useState } from "react";
 
-// Registrar los elementos de Chart.js
 ChartJS.register(
   CategoryScale,
   LinearScale,
@@ -37,12 +37,12 @@ const Dashboard = () => {
 
   // Paleta de colores para los gráficos
   const COLORS = [
-    "#E6F7E6", // Verde para solar
-    "#FF9800", // Naranja para eólica
-    "#E6F2FA", // Azul para hidroelectricidad
-    "#9C27B0", // Morado para geotermia
-    "#FFF9DB", // Amarillo para biocombustibles
-    "#F44336", // Rojo para consumo convencional
+    "#E6F7E6",   // Verde Suave
+    "#007BFF",   // Azul Brillante
+    "#E6F2FA",   // Azul Claro
+    "#003B73",   // Azul Oscuro
+    "#FFC107",   // Amarillo Solar
+    "#FFF9DB",   // Amarillo Suave
   ];
 
   // Cargar archivo CSV y procesarlo
@@ -147,21 +147,34 @@ const Dashboard = () => {
       })),
   });
 
-  return (
-    <div className="p-6 bg-gray-100 min-h-screen">
-      <h1 className="text-2xl font-bold text-gray-700 mb-6">Dashboard</h1>
+  // Aplicar filtros automáticamente cuando cambien
+  useEffect(() => {
+    applyFilters();
+  }, [selectedCountries, yearRange, visibleColumns, jsonData]);
 
+  return (
+    <div className="p-6 bg-blue-50 min-h-screen text-gray-800">
+      <h1 className="text-3xl font-bold text-gray-900 mb-6">
+        Dashboard de Energía Renovable
+      </h1>
       <input
         type="file"
         accept=".csv"
         onChange={handleFileUpload}
-        className="mb-6 w-full p-2 border rounded-lg shadow-md"
+        className="hidden"
+        id="file-upload"
       />
+      <label
+        htmlFor="file-upload"
+        className="mt-2 w-full bg-blue-700 text-white p-2 rounded hover:bg-blue-800 transition duration-300 text-center block"
+      >
+        Elegir archivo
+      </label>
 
       <div className="grid grid-cols-4 gap-6">
         {/* Filtros */}
         <div className="col-span-1 bg-white p-4 rounded-lg shadow-lg">
-          <h2 className="text-lg font-semibold mb-4">Filtros</h2>
+          <h2 className="text-lg font-semibold mb-4 text-blue-700">Filtros</h2>
           <ColumnFilter
             headers={columns}
             visibleColumns={visibleColumns}
@@ -193,12 +206,6 @@ const Dashboard = () => {
               }
             />
           </div>
-          <button
-            onClick={applyFilters}
-            className="mt-4 w-full bg-blue-500 text-white p-2 rounded"
-          >
-            Aplicar Filtros
-          </button>
         </div>
 
         {/* Gráficos */}
