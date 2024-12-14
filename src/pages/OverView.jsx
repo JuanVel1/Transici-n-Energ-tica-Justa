@@ -1,8 +1,8 @@
-import { SolarOverview } from "../components/solar/SolarOverview";
+import { WindOverview } from "../components/solar/WindOverview";
 
 const Overview = () => {
   return (
-    <SolarOverview />
+    <WindOverview />
   );
 };
 
