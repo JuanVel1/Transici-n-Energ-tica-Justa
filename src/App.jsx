@@ -1,8 +1,8 @@
- 
-import { BrowserRouter as Router,Route, Routes } from "react-router-dom";
-import "./App.css"; 
+
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import "./App.css";
 import Layout from "./components/layout/Layout";
-import  Dashboard  from "./components/dashboard/Dashboard";
+import Dashboard from "./components/dashboard/Dashboard";
 import Overview from "./pages/OverView";
 import Calculator from "./pages/Calculator";
 import CsvToJsonAndTableWithAdvancedFilters from "./components/table/CsvToJsonAndTableWithFilters";
@@ -14,6 +14,9 @@ function App() {
         <Layout>
           <Routes>
             <Route path="/table" element={<CsvToJsonAndTableWithAdvancedFilters />} />
+          </Routes>
+          <Routes>
+            <Route path="/" element={<Overview />} />
           </Routes>
           <Routes>
             <Route path="/overview" element={<Overview />} />
